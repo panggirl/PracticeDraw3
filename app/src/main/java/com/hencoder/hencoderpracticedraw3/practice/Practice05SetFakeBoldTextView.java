@@ -32,7 +32,14 @@ public class Practice05SetFakeBoldTextView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+// setFakeBoldText 是否使用伪粗体
+        paint.setFakeBoldText(false);
 
         canvas.drawText(text, 50, 100, paint);
+        canvas.save();
+        canvas.translate(50, 100);
+        paint.setFakeBoldText(true);
+        canvas.drawText(text, 0, 0, paint);
+        canvas.restore();
     }
 }

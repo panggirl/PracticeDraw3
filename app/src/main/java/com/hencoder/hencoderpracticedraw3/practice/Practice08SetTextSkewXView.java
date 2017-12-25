@@ -32,7 +32,11 @@ public class Practice08SetTextSkewXView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        paint.setTextSkewX(0.2f);
+        canvas.drawText(text+" setTextSkewX 正 0.2f ", 50, 100, paint);
 
-        canvas.drawText(text, 50, 100, paint);
+        canvas.translate(50, 100);
+        paint.setTextSkewX(-0.2f);
+        canvas.drawText(text+" setTextSkewX 负 0.2f ", 0, 100, paint);
     }
 }
